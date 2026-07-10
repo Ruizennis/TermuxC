@@ -1,7 +1,7 @@
 # TermuxC aka Termux copy, view README.md for more info
 # Copyright (c) 2026 Ruizennis
 # This software is licensed under the MIT License.
-# See the root LICENSE file or https://opensource.org/licenses/MIT for full terms.
+# See the LICENSE file or https://opensource.org/licenses/MIT for full terms.
 import base64
 import sys
 from time import sleep
@@ -15,22 +15,22 @@ Usage:
 Copying text with cli
 termuxc Test!
 OR
-echo "test" | Termuxc
+echo "<text>" | Termuxc
 
 Copying a number with cli
-termuxc 1
+termuxc <number>
 
 Copying filecontents with cli
-cat Filename | Termuxc
-(replace filename with desired file path)
+cat <file> | Termuxc
+(replace <file> with desired file path)
 
 Using pip package to copy text
 from TermuxC import Copy
-Copy('test')
+Copy('<text>')
 
 Using pip package to copy number
 from TermuxC import Copy
-Copy(1)
+Copy(<number>)
 
 Using Pip package to text copy from file
 from TermuxC import Copy
@@ -59,8 +59,8 @@ def main():
            Copy(readstdin)
            sys.exit(0)
         else:
-          print('Please provide an input')
-          sys.exit(0)
+          print('Please provide an input', file=sys.stderr)
+          sys.exit(1)
   elif help.intersection(sys.argv):
     print(help_message)
     sys.exit(0)
@@ -68,5 +68,5 @@ def main():
         Copy(' '.join(sys.argv[1:]))
         sys.exit(0)
   else:
-    print('Please provide atleast 1 argument or run termuxc --help for help.')
-    sys.exit(0)
+    print('Please provide at least 1 argument or run termuxc --help for help.', file=sys.stderr)
+    sys.exit(1)

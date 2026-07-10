@@ -7,13 +7,13 @@
 [![PyPI downloads](https://img.shields.io/pypi/dm/TermuxC.svg)](https://pypi.org/project/TermuxC/)
 
 
-This dual function pip package/cli tool was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app. This package solves that.
+This dual function pip package & cli tool was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app; This package solves that.
 
 ## Cli Tool Usage:
 
 ### Copy text
 ```bash
-termux text
+termuxc text
 ```
 **Or**
 ```bash
@@ -27,7 +27,7 @@ cat filename | termuxc
 ```bash
 pwd | termuxc
 ```
-Also compatable with
+Also compatible with
 - bat
 - grep
 - curl
@@ -60,7 +60,7 @@ Copy(os.getcwd())
 ## Installation 
 Install pip package
 ```bash
-pkg install TermuxC
+pip install TermuxC
 ```
 
 ## Uninstallation

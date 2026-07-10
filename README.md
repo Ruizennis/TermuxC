@@ -21,6 +21,16 @@ echo "test" | termuxc
 ```bash
 cat filename | termuxc
 ```
+### Copy current working directory
+```bash
+pwd | termuxc
+```
+Also compatable with
+- bat
+- grep
+- curl
+- head
+- tail
 ## Pip package Usage:
 
 ### Copy text
@@ -38,7 +48,12 @@ with open("TermuxC.py", "r") as f:
     content = f.read()
     Copy(content)
 ```
-
+### Copy current working directory
+```python
+from TermuxC import Copy
+import os
+Copy(os.getcwd())
+```
 
 ## Installation 
 Install git

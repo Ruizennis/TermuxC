@@ -2,6 +2,9 @@
 ### Termux copy to clipboard made easy.
 ## Also known as TermuxCopy
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org)
+
+
 This package was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app. This package solves that.
 
 ## Usage:

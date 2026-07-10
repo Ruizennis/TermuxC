@@ -38,9 +38,9 @@ Also compatable with
 ### Copy text
 ```python
 from TermuxC import Copy
-Copy("Str")
-Copy(1)
-Copy(1.3)
+Copy("Str") #works with strings,
+Copy(1) # numbers
+Copy(1.3) # and floats!
 ```
 
 ### Copy text from file

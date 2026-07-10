@@ -54,7 +54,7 @@ Install pip Package
 ```bash
 pip install .
 ```
-Uninstall package
+## Uninstallation
 ```bash
 pip uninstall TermuxC
 ```

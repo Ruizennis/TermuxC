@@ -5,9 +5,23 @@
 [![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org)
 
 
-This package was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app. This package solves that.
+This dual function package/cli tool was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app. This package solves that.
 
-## Usage:
+## Cli Tool Usage:
+
+### Copy text
+```bash
+termux text
+```
+OR
+```bash
+echo "test" | termuxc
+```
+### Copy text from file
+```bash
+cat filename | termuxc
+```
+## Pip package Usage:
 
 ### Copy text
 ```python
@@ -17,28 +31,16 @@ Copy(1)
 Copy(1.3)
 ```
 
-### Copy from file
+### Copy text from file
 ```python
 from TermuxC import Copy
 with open("TermuxC.py", "r") as f:
     content = f.read()
     Copy(content)
 ```
-## Installation (Package only)
-Install git
-```bash
-pkg install git
-```
-Install Package
-```bash
-pip install git+https://github.com/Ruizennis/TermuxC.git
-```
-Uninstall Package
-```bash
-pip uninstall TermuxC
-```
 
-## Installation (Entire Repository)
+
+## Installation 
 Install git
 ```bash
 pkg install git
@@ -50,7 +52,7 @@ cd TermuxC
 ```
 Install pip Package
 ```bash
-pip install -e .
+pip install .
 ```
 Uninstall package
 ```bash

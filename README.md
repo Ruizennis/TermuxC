@@ -75,27 +75,6 @@ Get Python from https://www.python.org!
 
 View Package here! https://pypi.org/project/TermuxC/
 
-## Aware:
-If using terminal multiplexers such as **Tmux** or **Screen** ensure they allow **OSC 52**.
 
 ### Tmux support
-Run this command to allow tmux to write to device clipboard
-```bash
-CONFIG_FILE=$( [ -d "$HOME/.config/tmux" ] \
-  && echo "$HOME/.config/tmux/tmux.conf" \
-  || echo "$HOME/.tmux.conf" ) ; \
-printf "\n# Enable clipboard and passthrough\nset -s set-clipboard on\nset -g allow-passthrough on\n" >> "$CONFIG_FILE" \
-&& tmux kill-server 2>/dev/null \
-|| true
-```
-
-### Screen support
-Run this command to allow Screen to write to clipboard
-```bash
-CONFIG_FILE=$( [ -f "$HOME/.screenrc" ] \
-  && echo "$HOME/.screenrc" \
-  || echo "$HOME/.screenrc" ) ; \
-printf "\n# Enable clipboard and passthrough\nregister [ \"\nbind ] paste [\n" >> "$CONFIG_FILE" \
-&& screen -wipe >/dev/null 2>&1 \
-|| true
-```
+As of version **2.2.0** TermuxC has native tmux support!

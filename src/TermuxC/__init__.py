@@ -4,6 +4,7 @@
 # See the LICENSE file or https://opensource.org/licenses/MIT for full terms.
 import base64
 import sys
+import os
 from time import sleep
 from threading import Lock
 # configuration
@@ -40,13 +41,35 @@ with open(filename, 'r') as F:
  
 for more help see https://github.com/Ruizennis/TermuxC
 '''
+#New: added tmux support natively
+def check_for_tmux():
+   if "TMUX" in os.environ:
+     return True #using tmux
+   else:
+      return False #normal code
+             
+
 lock = Lock()
 
 def Copy(string):
     with lock:
         content = str(string)
         b64 = base64.b64encode(content.encode('utf-8')).decode('ascii')
-        sys.stdout.write(f"\033]52;c;{b64}\a")
+        multiplexor = check_for_tmux()
+        if multiplexor:
+            tmuxpath = os.path.expanduser('~/.tmux.conf')
+            content = ''
+            if os.path.exists(tmuxpath):
+                with open(tmuxpath, 'r') as file_read:
+                    content = file_read.read()
+                    if not "allow-passthrough" in content:
+                       with open(tmuxpath, 'a') as file:
+                          file.write("\nset -g allow-passthrough on\n")
+                          os.system(f"tmux source-file {tmuxpath} >/dev/null 2>&1")       
+            write_code = f"\033Ptmux;\033\033]52;c;{b64}\a\033\\" # special tmux osc command
+        else:
+            write_code = f"\033]52;c;{b64}\a"
+        sys.stdout.write(write_code)
         sys.stdout.flush()
         sleep(Sleeptime)
 

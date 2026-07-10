@@ -35,18 +35,18 @@ Install git
 ```bash
 pkg install git -y
 ```
-Clone the repository
+Clone the repository and move it
 ```bash
 git clone https://github.com/Ruizennis/TermuxC
+cd TermuxC
 ```
-
 Install Package as pip package
 ```bash
 pip install -e .
 ```
 Uninstall Package
 ```bash
-pip uninstall package name(placeholder)
+pip uninstall TermuxC
 ```
 ## Requirements:
 **Python 3+**

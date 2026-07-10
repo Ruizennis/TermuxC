@@ -20,7 +20,7 @@ with open(TermuxC.py, "r") as f:
     content = f.read()
     Copy(content)
 ```
-##Installation (Just Package)
+## Installation (Just Package)
 Install Package and add to site-packages
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Ruizennis/TermuxC/main/TermuxC.py -o $(python -m site --user-site)/TermuxC.py
@@ -35,19 +35,20 @@ Install git
 ```bash
 pkg install git -y
 ```
-Clone the repository and move it
+Clone the repository and move into it
 ```bash
 git clone https://github.com/Ruizennis/TermuxC
 cd TermuxC
 ```
-Install Package as pip package
+Install pip Package
 ```bash
 pip install -e .
 ```
-Uninstall Package
+## Uninstallation
 ```bash
 pip uninstall TermuxC
 ```
+
 ## Requirements:
 **Python 3+**
 

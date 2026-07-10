@@ -3,6 +3,8 @@
 ## Also known as TermuxCopy
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org)
+[![PyPI version](https://img.shields.io/pypi/v/TermuxC.svg?color=blue)](https://pypi.org/project/TermuxC/)
+[![PyPI downloads](https://img.shields.io/pypi/dm/TermuxC.svg)](https://pypi.org/project/TermuxC/)
 
 
 This dual function pip package/cli tool was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app. This package solves that.
@@ -36,9 +38,9 @@ Also compatable with
 ### Copy text
 ```python
 from TermuxC import Copy
-Copy("Str")
-Copy(1)
-Copy(1.3)
+Copy("Str") #works with strings,
+Copy(1) # numbers
+Copy(1.3) # and floats!
 ```
 
 ### Copy text from file
@@ -70,6 +72,7 @@ pip uninstall TermuxC
 **Python 3+**
 
 Get Python from https://www.python.org!
+
 View Package here https://pypi.org/project/TermuxC/
 
 ## Aware:

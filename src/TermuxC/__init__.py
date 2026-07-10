@@ -51,7 +51,7 @@ def check_for_tmux():
 
 lock = Lock()
 
-def Copy(string):
+def Copy(string: str | int) -> None:
     with lock:
         content = str(string)
         b64 = base64.b64encode(content.encode('utf-8')).decode('ascii')

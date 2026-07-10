@@ -1,6 +1,7 @@
-# TermuxC - Termux copy to clipboard made easy.
+# TermuxC 
+### Termux copy to clipboard made easy.
 ## Also known as TermuxCopy
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 This package was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app. This package solves that.
 
 ## Usage:
@@ -16,11 +17,15 @@ Copy(1.3)
 ### Copy from file
 ```python
 from TermuxC import Copy
-with open(TermuxC.py, "r") as f:
+with open("TermuxC.py", "r") as f:
     content = f.read()
     Copy(content)
 ```
 ## Installation (Package only)
+Install git
+```bash
+pkg install git
+```
 Install Package
 ```bash
 pip install git+https://github.com/Ruizennis/TermuxC.git

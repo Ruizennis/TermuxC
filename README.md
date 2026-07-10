@@ -77,4 +77,4 @@ View Package here! https://pypi.org/project/TermuxC/
 
 
 ### Tmux support
-As of version **2.2.0** TermuxC has native tmux support!
+As of version **2.2.0 And above** TermuxC has native tmux support!

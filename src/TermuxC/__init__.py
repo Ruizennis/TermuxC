@@ -58,14 +58,16 @@ def Copy(string):
         multiplexor = check_for_tmux()
         if multiplexor:
             tmuxpath = os.path.expanduser('~/.tmux.conf')
-            content = ''
+            Fcontent = ''
             if os.path.exists(tmuxpath):
                 with open(tmuxpath, 'r') as file_read:
-                    content = file_read.read()
-                    if not "allow-passthrough" in content:
-                       with open(tmuxpath, 'a') as file:
-                          file.write("\nset -g allow-passthrough on\n")
-                          os.system(f"tmux source-file {tmuxpath} >/dev/null 2>&1")       
+                    Fcontent = file_read.read()
+                    
+            if not "allow-passthrough" in Fcontent:
+                with open(tmuxpath, 'a') as file:
+                    file.write("\nset -g allow-passthrough on\n")
+                    os.system(f"tmux source-file {tmuxpath} >/dev/null 2>&1") 
+                            
             write_code = f"\033Ptmux;\033\033]52;c;{b64}\a\033\\" # special tmux osc command
         else:
             write_code = f"\033]52;c;{b64}\a"

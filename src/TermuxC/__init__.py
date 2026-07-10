@@ -1,4 +1,7 @@
-# TermuxC aka Termux copy, view TermuxC.md for more info
+# TermuxC aka Termux copy, view README.md for more info
+# Copyright (c) 2026 Ruizennis
+# This software is licensed under the MIT License.
+# See the root LICENSE file or https://opensource.org/licenses/MIT for full terms.
 import base64
 import sys
 from time import sleep

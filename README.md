@@ -5,7 +5,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org)
 
 
-This dual function package/cli tool was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app. This package solves that.
+This dual function pip package/cli tool was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app. This package solves that.
 
 ## Cli Tool Usage:
 

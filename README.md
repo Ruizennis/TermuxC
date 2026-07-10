@@ -56,19 +56,11 @@ Copy(os.getcwd())
 ```
 
 ## Installation 
-Install git
+Install pip package
 ```bash
-pkg install git
+pkg install TermuxC
 ```
-Clone the repository and move into it
-```bash
-git clone https://github.com/Ruizennis/TermuxC
-cd TermuxC
-```
-Install pip Package
-```bash
-pip install .
-```
+
 ## Uninstallation
 ```bash
 pip uninstall TermuxC
@@ -78,6 +70,7 @@ pip uninstall TermuxC
 **Python 3+**
 
 Get Python from https://www.python.org!
+View Package here https://pypi.org/project/TermuxC/2.0.5/
 
 ## Aware:
 If using terminal multiplexers such as **Tmux** or **Screen** ensure they allow **OSC 52**.

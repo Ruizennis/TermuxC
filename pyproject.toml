@@ -4,9 +4,22 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "TermuxC"
-version = "2.0.0"
+version = "2.0.5"
 description = "A lightweight utility to copy text to the device clipboard using OSC 52."
 authors = [{name = "Ruizennis"}]
+requires-python = ">=3.7"
+license = {text = "MIT"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Environment :: Console",
+    "Topic :: Utilities"
+]
+
+[project.urls]
+Homepage = "https://github.com/Ruizennis/TermuxC"
+Issues = "https://github.com/Ruizennis/TermuxC/issues"
 
 [project.scripts]
 Termuxc = "TermuxC:main"

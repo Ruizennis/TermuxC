@@ -8,13 +8,15 @@ This package was made to solve an issue with Termux, not allowing copying to dev
 ### Copy text
 ```python
 from TermuxC import Copy
-Copy(text)
+Copy("Str")
+Copy(1)
+Copy(1.3)
 ```
 
 ### Copy from file
 ```python
 from TermuxC import Copy
-with open(filename, "r", encoding="utf-8") as f:
+with open(TermuxC.py, "r") as f:
     content = f.read()
     Copy(content)
 ```
@@ -27,7 +29,10 @@ Clone the repository
 ```bash
 git clone https://github.com/Ruizennis/TermuxC
 ```
-
+Add Export so that Pkg is avalible from anywhere
+```bash
+echo "export PYTHONPATH=\"\$PYTHONPATH:\$(pwd)\"" >> ~/.bashrc && source ~/.bashrc
+```
 ## Requirements:
 **Python 3+**
 

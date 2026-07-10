@@ -1,4 +1,4 @@
-# TermuxC
+# TermuxC - Termux copy to clipboard made easy.
 ## Also known as TermuxCopy
 
 This package was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app. This package solves that.

@@ -13,7 +13,7 @@ This dual function pip package/cli tool was made to solve an issue with Termux, 
 ```bash
 termux text
 ```
-OR
+**Or**
 ```bash
 echo "test" | termuxc
 ```

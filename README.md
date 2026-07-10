@@ -73,13 +73,13 @@ pip uninstall TermuxC
 
 Get Python from https://www.python.org!
 
-View Package here https://pypi.org/project/TermuxC/
+View Package here! https://pypi.org/project/TermuxC/
 
 ## Aware:
 If using terminal multiplexers such as **Tmux** or **Screen** ensure they allow **OSC 52**.
 
 ### Tmux support
-run this command to allow tmux to write to device clipboard
+Run this command to allow tmux to write to device clipboard
 ```bash
 CONFIG_FILE=$( [ -d "$HOME/.config/tmux" ] \
   && echo "$HOME/.config/tmux/tmux.conf" \
@@ -90,7 +90,7 @@ printf "\n# Enable clipboard and passthrough\nset -s set-clipboard on\nset -g al
 ```
 
 ### Screen support
-run this command to allow Screen to write to clipboard
+Run this command to allow Screen to write to clipboard
 ```bash
 CONFIG_FILE=$( [ -f "$HOME/.screenrc" ] \
   && echo "$HOME/.screenrc" \

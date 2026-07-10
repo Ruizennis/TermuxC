@@ -70,7 +70,7 @@ pip uninstall TermuxC
 **Python 3+**
 
 Get Python from https://www.python.org!
-View Package here https://pypi.org/project/TermuxC/2.0.5/
+View Package here https://pypi.org/project/TermuxC/
 
 ## Aware:
 If using terminal multiplexers such as **Tmux** or **Screen** ensure they allow **OSC 52**.

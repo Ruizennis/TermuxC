@@ -67,6 +67,17 @@ pip install TermuxC
 ```bash
 pip uninstall TermuxC
 ```
+## Flags
+|Flag|Function        |
+|----|----------------|
+| -f | Force file read|
+| -t | Force Text copy|
+| -h | Show help menu |
+#### Aditional flag alliases
+- --file
+- --text
+- --help
+- -help
 
 ## Requirements:
 **Python 3+**

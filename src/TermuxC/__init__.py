@@ -9,7 +9,7 @@ from time import sleep
 from threading import Lock
 # configuration
 Sleeptime = 0.5
-help = {'-h', '--help', '-help'}
+helpflags = {'-h', '--help', '-help'}
 help_message = '''
 Usage:
 
@@ -38,7 +38,12 @@ from TermuxC import Copy
 with open(filename, 'r') as F:
     C = F.read()
     Copy(C)
- 
+    
+Flags
+-f • Force File file
+-t • Force text copy
+-h • Show help menu
+
 for more help see https://github.com/Ruizennis/TermuxC
 '''
 #New: added tmux support natively
@@ -79,17 +84,50 @@ def main():
   if not sys.stdin.isatty():
         readstdin = sys.stdin.read()
         if readstdin.endswith('\n'):
-          readstdin = readstdin[:-1]
+            readstdin = readstdin[:-1]
+        if os.path.isfile(readstdin):
+            try:
+                with open(readstdin, 'r') as File:
+                    readstdin = File.read()
+            except Exception as e:
+                print(f'Error reading file, {e}', file=sys.stderr)
+                sys.exit(1)
         if readstdin:
            Copy(readstdin)
            sys.exit(0)
         else:
           print('Please provide an input', file=sys.stderr)
           sys.exit(1)
-  elif help.intersection(sys.argv):
+  elif helpflags.intersection(sys.argv):
     print(help_message)
     sys.exit(0)
   elif len(sys.argv) > 1:
+      if sys.argv[1] in ['-t', '--text']:
+        text = sys.stdin.read()
+        if text.endswith('\n'):
+            text = text[:-1]
+        Copy(text)
+        sys.exit(0)
+
+      elif sys.argv[1] in ['-f', '--file']:
+          if len(sys.argv) == 3:
+            file = sys.argv[2]
+            if os.path.isfile(file):
+                try:
+                     with open(file, 'r') as filecopy:
+                         Copy(filecopy.read())
+                except:
+                    print('Error, failed to copy file.', file=sys.stderr)
+            else:
+                print('Error, invalid filepath', file=sys.stderr)
+                sys.exit(1)
+                
+          else:
+              print('Error, -f flag requires a file', file=sys.stderr)
+              sys.exit(1)
+              
+
+      else:
         Copy(' '.join(sys.argv[1:]))
         sys.exit(0)
   else:

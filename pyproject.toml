@@ -22,6 +22,7 @@ classifiers = [
 Homepage = "https://github.com/Ruizennis/TermuxC"
 Issues = "https://github.com/Ruizennis/TermuxC/issues"
 Changelog = "https://github.com/Ruizennis/TermuxC/blob/main/CHANGELOG.md"
+Documentation="https://Ruizennis.github.io/TermuxC/"
 
 [project.scripts]
 Termuxc = "TermuxC:main"

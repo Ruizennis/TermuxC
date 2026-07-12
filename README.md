@@ -23,6 +23,11 @@ echo "test" | termuxc
 ```bash
 cat filename | termuxc
 ```
+### Copy text from file using the read from file flag
+```bash
+termuxc -f filename
+```
+
 ### Copy current working directory
 ```bash
 pwd | termuxc

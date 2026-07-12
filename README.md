@@ -92,5 +92,5 @@ https://github.com/Ruizennis/TermuxC/issues
 ### Tmux support
 As of version **2.2.0 And above** TermuxC has native tmux support!
 
-### Aware
-This package uses the *termux-setup-tools* package **HOWEVER** it is **non essential** and the program works without it the only downside is not being able to cleanly open the github url in browser and instead being required to manualy copy it.
+# License
+## This project is license under the Mit license, see [LICENSE](LICENSE)

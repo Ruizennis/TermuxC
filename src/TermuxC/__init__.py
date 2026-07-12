@@ -78,7 +78,7 @@ def Copy(string: str | int) -> None:
                     else:
                         print("Please add 'set -g allow-passthrough on' to your tmux configuration file to allow tmux support, as without explicitly allowing clipboard passthough on OSC 52 is blocked and copying will fail.")
                         print('Attempting to copy anyways..')
-            write_code = f"\033Ptmux;\033\033]52;c;{b64}\a\033\\" # special tmux osc command
+                write_code = f"\033Ptmux;\033\033]52;c;{b64}\a\033\\" # special tmux osc command
         else:
             write_code = f"\033]52;c;{b64}\a"
         sys.stdout.write(write_code)

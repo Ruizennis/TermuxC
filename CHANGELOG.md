@@ -3,6 +3,11 @@
 
 ---
 
+## 2.4.2:
+### Fixed indentation error on line 81
+
+---
+
 ## 2.4.1: 
 ### Added user confirmation step before writing to tmux config and removed dependecy on termux-setup-tools for opening Github url. also linked changelog in toml
 

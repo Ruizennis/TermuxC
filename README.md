@@ -86,6 +86,8 @@ Get Python from https://www.python.org!
 
 View Package here! https://pypi.org/project/TermuxC/
 
+Create an issue here!
+https://github.com/Ruizennis/TermuxC/issues
 
 ### Tmux support
 As of version **2.2.0 And above** TermuxC has native tmux support!

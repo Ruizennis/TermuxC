@@ -96,6 +96,7 @@ def Copy(string: str | int) -> None:
         sys.stdout.flush()
 
 def main():
+    args = set(sys.argv)
     if not sys.stdin.isatty():
         readstdin = sys.stdin.read()
         if readstdin.endswith('\n'):

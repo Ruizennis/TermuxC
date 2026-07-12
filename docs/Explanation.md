@@ -78,13 +78,15 @@ Flags
 -h • Show help menu
 -V • Show version info
 
+# Example:
+# Original Repository: https://github.com/Ruizennis/TermuxC
 for more help see {Githuburl}
 '''
 ```
 
 |Configuration Variable| Controls|
 |---------------------|--------|
-| Githuburl           | Controls what url is shown in help and what url to open when am start url is ran in the help flag|
+| Githuburl           | Controls what url is shown in help and what url to open when ActivityManager attempts to open repository url|
 | helpflags |  help flag aliases|
 | fileflags |  read from file mode flag aliases|
 | iflags | Interactive mode flag aliases|
@@ -114,7 +116,7 @@ for more help see {Githuburl}
 # Stable patches
 |Installation Url | Installation Command | Version number |
 |-----------------|----------------------|----------------|
-|[TermuxC - 2.5.5](https://pypi.org/project/TermuxC/2.5.5/)| pip install TermuxC==2.5.5 | 2.5.5|
+|[TermuxC - 2.5.6](https://pypi.org/project/TermuxC/2.5.6/)| pip install TermuxC==2.5.6| 2.5.6|
 
 # Additional resources
 [Android Activity Manager API](https://developer.android.com/reference/android/app/ActivityManager)  

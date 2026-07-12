@@ -4,12 +4,12 @@
 ---
 
 !!! Note "Project links!"
-* [GitHub Repository](https://github.com/Ruizennis/TermuxC){ .md-button }
-* [PyPI Package](https://pypi.org/project/TermuxC/){ .md-button }
+### [GitHub Repository](https://github.com/Ruizennis/TermuxC)  
+### [PyPI Package](https://pypi.org/project/TermuxC/)
 
 ---
 
 !!! Note "Pages"
 
-* [Home](index.md){ .md-button }  
-* [Explanation](Explanation.md){ .md-button }
+### [Home](index.md) 
+### [Explanation](Explanation.md)

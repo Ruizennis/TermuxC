@@ -3,6 +3,13 @@
 
 ---
 
+# 2.5.6:
+## Stable release
+- fixed flags system by declaring args = set(sys.argv) on line 99
+- Updated docs with new catpucchin mocha color scheme
+- Removed 2.5.5 from stable releases list in docs.
+---
+
 # 2.5.5
 - Fixed minor indentation error on line 141
 - Updated documentation

@@ -7,10 +7,12 @@ import sys
 import os
 from time import sleep
 from threading import Lock
+import subprocess
 # configuration
 Sleeptime = 0.5
+Githuburl = "https://github.com/Ruizennis/TermuxC"
 helpflags = {'-h', '--help', '-help'}
-help_message = '''
+help_message = f'''
 Usage:
 
 Copying text with cli
@@ -44,7 +46,7 @@ Flags
 -t • Force text copy
 -h • Show help menu
 
-for more help see https://github.com/Ruizennis/TermuxC
+for more help see {Githuburl}
 '''
 #New: added tmux support natively
 def check_for_tmux():
@@ -62,17 +64,20 @@ def Copy(string: str | int) -> None:
         b64 = base64.b64encode(content.encode('utf-8')).decode('ascii')
         multiplexor = check_for_tmux()
         if multiplexor:
-            tmuxpath = os.path.expanduser('~/.tmux.conf')
-            Fcontent = ''
-            if os.path.exists(tmuxpath):
-                with open(tmuxpath, 'r') as file_read:
-                    Fcontent = file_read.read()
-                    
-            if not "allow-passthrough" in Fcontent:
-                with open(tmuxpath, 'a') as file:
-                    file.write("\nset -g allow-passthrough on\n")
-                    os.system(f"tmux source-file {tmuxpath} >/dev/null 2>&1") 
-                            
+                tmuxpath = os.path.expanduser('~/.tmux.conf')
+                Fcontent = ''
+                if os.path.exists(tmuxpath):
+                    with open(tmuxpath, 'r') as file_read:
+                        Fcontent = file_read.read()
+                if not "allow-passthrough" in Fcontent:
+                    Yes_list = ['Y', 'YE', 'YES']
+                    if input("Allow script to add 'set -g allow-passthrough on' to your tmux.conf file to allow tmux support? [Y/n]").upper() in Yes_list:
+                        with open(tmuxpath, 'a') as file:
+                            file.write("\nset -g allow-passthrough on\n")
+                            os.system(f"tmux source-file {tmuxpath} >/dev/null 2>&1") 
+                    else:
+                        print("Please add 'set -g allow-passthrough on' to your tmux configuration file to allow tmux support, as without explicitly allowing clipboard passthough on OSC 52 is blocked and copying will fail.")
+                        print('Attempting to copy anyways..')
             write_code = f"\033Ptmux;\033\033]52;c;{b64}\a\033\\" # special tmux osc command
         else:
             write_code = f"\033]52;c;{b64}\a"
@@ -85,13 +90,6 @@ def main():
         readstdin = sys.stdin.read()
         if readstdin.endswith('\n'):
             readstdin = readstdin[:-1]
-        if os.path.isfile(readstdin):
-            try:
-                with open(readstdin, 'r') as File:
-                    readstdin = File.read()
-            except Exception as e:
-                print(f'Error reading file, {e}', file=sys.stderr)
-                sys.exit(1)
         if readstdin:
            Copy(readstdin)
            sys.exit(0)
@@ -100,6 +98,18 @@ def main():
           sys.exit(1)
   elif helpflags.intersection(sys.argv):
     print(help_message)
+    print('Would you like to open the Github Repository in browser? [Y/n]')
+    pick = input()
+    if pick not in ['y', 'Y', 'yes', 'Yes' '', ' ']:
+        try:
+            subprocess.run(
+    ["am", "start", "-a", "android.intent.action.VIEW", "-d", Githuburl],
+    stdout=subprocess.DEVNULL,
+    stderr=subprocess.DEVNULL
+            )
+        except:
+            print('Error, opening url failed please copy url manually into browser address bar.')
+            print(Githuburl)
     sys.exit(0)
   elif len(sys.argv) > 1:
       if sys.argv[1] in ['-t', '--text']:
@@ -125,8 +135,6 @@ def main():
           else:
               print('Error, -f flag requires a file', file=sys.stderr)
               sys.exit(1)
-              
-
       else:
         Copy(' '.join(sys.argv[1:]))
         sys.exit(0)

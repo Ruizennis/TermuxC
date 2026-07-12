@@ -1,5 +1,4 @@
-# Full Explanation
-## This is the Full Explanation of every main part of the code
+# Advanced Explanation
 ### **Last updated 6/12/2026**
 ---
 
@@ -115,6 +114,10 @@ for more help see {Githuburl}
 # Stable patches
 |Installation Url | Installation Command | Version number |
 |-----------------|----------------------|----------------|
-|[TermuxC - 2.5.2](https://pypi.org/project/TermuxC/2.5.2/)| pip install TermuxC==2.5.2 | 2.5.2|
+|[TermuxC - 2.5.5](https://pypi.org/project/TermuxC/2.5.5/)| pip install TermuxC==2.5.5 | 2.5.5|
 
-##### If you have any issues using the TermuxC package or cli tool please make an issue at https://github.com/Ruizennis/TermuxC/issues
+# Additional resources
+[Android Activity Manager API](https://developer.android.com/reference/android/app/ActivityManager)  
+[Issues](https://github.com/Ruizennis/TermuxC/issues)
+
+##### If you have any issues using the TermuxC package or cli tool please make an issue.

@@ -15,7 +15,7 @@ I welcome pull requests that improve functionality and/or documentation. To ensu
 
 ## Average bug testing
 These are the standard tests recommended when adding a feature or modifying TermuxC:
-- **Flag Robustness**: Do flags correctly handle missing arguments (e.g., `termuxc -f` with no filename)?
+- **Flag Handling**: Do flags correctly handle missing arguments (e.g., `termuxc -f` with no filename)?
 - **Pipe Handling**: Does `cat file | termuxc` work as expected, including edge cases like empty files or files ending without a newline?
 - **Concurrency**: Does running multiple `termuxc` commands in rapid succession trigger any race conditions? (Ensure the `lock` is properly utilized).
 - **Tmux Integration**: If `tmux` is active, does the tool correctly detect the configuration or prompt for the necessary `allow-passthrough` setting?
@@ -24,6 +24,6 @@ These are the standard tests recommended when adding a feature or modifying Term
 
 ## Development Setup
 If you wish to test changes locally:
-1. Go to the directory where you have your custom installation of TermuxC
-2. install package locally pip install -e .
+1. Install custom installation of TermuxC
 3. Test changes and complete average bug testing if applicable
+4. Upload Instalation to github

@@ -75,7 +75,7 @@ pip uninstall TermuxC
 | -i | Interactive mode|
 | -h | Show help menu |
 | -V | Show package version|
-#### Aditional flag alliases
+#### Aditional flag aliases
 - --file
 - --interactive
 - --help

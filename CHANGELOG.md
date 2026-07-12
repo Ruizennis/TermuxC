@@ -1,5 +1,13 @@
 # TermuxC Pip Changelog
-## Note, this does not include all commits, only commits with an assosiated pip version increaee
+## Note, this does not include all commits, only commits with an assosiated pip version increase.
+
+---
+
+# 2.5.5
+- Fixed minor indentation error on line 141
+- Updated documentation
+- Updated README.md
+- Added CONTRIBUTING.md
 
 ---
 
@@ -44,7 +52,7 @@
 
 # 2.4.1: 
 - Added user confirmation step before writing to tmux config
-- Removed dependecy on termux-setup-tools for opening Github url by using subproccess
+- Removed all dependency on termux-setup-tools by instead using subproccess to activate the android activity manager
 - Imported subproccess
 - Linked changelog in pyproject.toml
 
@@ -70,7 +78,7 @@
 
 # 2.2.0:
 - Added native tmux support
-- Removed Screen focused intergration instead opting to focus on tmux intergrarion only
+- Removed Screen focused integration instead opting to focus on tmux intergrarion only
 - Updated README.md
 
 ---

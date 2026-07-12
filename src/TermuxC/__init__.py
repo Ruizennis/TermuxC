@@ -79,7 +79,7 @@ def Tmuxsupport(b64):
                     except subprocess.CalledProcessError as error:
                         print(f'Error, command failed with an error. Error: {error}')
             else:
-                print("Please add 'set -g allow-passthrough on' to your tmux configuration file to allow tmux support, as without explicitly allowing clipboard passthough on OSC 52 is blocked and copying will fail.")
+                print("Please add 'set -g allow-passthrough on' to your tmux configuration file to allow tmux support, as without explicitly allowing clipboard passthrough on OSC 52 is blocked and copying will fail.")
                 print('Attempting to copy anyways..')
         return f"\033Ptmux;\033\033]52;c;{b64}\a\033\\" # special tmux osc command
     else:
@@ -138,7 +138,7 @@ def main():
                 if text.endswith('\n'):
                     text = text[:-1]
                 Copy(text)
-               sys.exit(0)
+                sys.exit(0)
             except KeyboardInterrupt:
                 print('Ctrl+C pressed, stopping')
                 sys.exit(0)
@@ -153,7 +153,7 @@ def main():
                     sys.exit(1)
                 file = args[0]
             except Exception as e:
-                print(f'Error proccesing flags, {e}')
+                print(f'Error processing flags, {e}')
                 sys.exit(1)
             if not os.path.isfile(file):
                 print(f'Error, invalid filepath \"{file}\"', file=sys.stderr)
@@ -162,7 +162,7 @@ def main():
                 with open(file, 'r') as filecopy:
                     Copy(filecopy.read())
             except PermissionError:
-                print('Error, Unable to open file because of missing permision.')
+                print('Error, Unable to open file because of missing permission.')
             except Exception as error:
                 print(f'Error, failed to copy file {file}, error: {error}', file=sys.stderr)
         else:

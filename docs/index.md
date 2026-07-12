@@ -1,5 +1,5 @@
 # Welcome to the TermuxC Docs!
-## This is meant to be a documentation of the advanced featurea of the package **Not** an installation or usage guide, for instructions on installing the package view [README.md](https://github.com/Ruizennis/TermuxC/blob/main/README.md)
+## This is meant to be a documentation of the advanced features of the package **Not** an installation or usage guide, for instructions on installing or using the package view [README.md](https://github.com/Ruizennis/TermuxC/blob/main/README.md)
 
 ---
 
@@ -14,4 +14,4 @@
 
 ## Pages
 ### [Home](index.md)  
-### [Full Explanation](Full_explanation.md)
+### [Advanced Explanation](Advanced_explanation.md)

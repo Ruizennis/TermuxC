@@ -64,6 +64,7 @@ pip install TermuxC
 ```
 
 ## Uninstallation
+Uninstall pip package
 ```bash
 pip uninstall TermuxC
 ```
@@ -73,26 +74,33 @@ pip uninstall TermuxC
 | -f | Read from file |
 | -i | Interactive mode|
 | -h | Show help menu |
+| -V | Show package version|
 #### Aditional flag alliases
 - --file
 - --interactive
 - --help
+- --version
 
 ## Requirements:
 **Python 3+**
 
-Get Python from https://www.python.org!
+Get Python from here!  
+https://www.python.org
 
-View Package here! https://pypi.org/project/TermuxC/
+View Package here!  
+https://pypi.org/project/TermuxC/
 
-Create an issue here!
+Create an issue here!  
 https://github.com/Ruizennis/TermuxC/issues
 
-View changelog here!
+View changelog here!  
 https://github.com/Ruizennis/TermuxC/blob/main/CHANGELOG.md
+
+View the documentation here!  
+https://Ruizennis.github.io/TermuxC/
 
 ### Tmux support
 As of version **2.2.0 And above** TermuxC has native tmux support!
 
 # License
-## This project is license under the Mit license, see [LICENSE](LICENSE)
+## This project is licensed under the MIT license, see [LICENSE](LICENSE)

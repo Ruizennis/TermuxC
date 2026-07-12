@@ -5,12 +5,10 @@
 import base64
 import sys
 import os
-from time import sleep
 from threading import Lock
 import subprocess
 from importlib.metadata import version, PackageNotFoundError
 # configuration
-Sleeptime = 0.5
 Githuburl = "https://github.com/Ruizennis/TermuxC"
 helpflags = {'-h', '--help'}
 fileflags = {'-f', '--file'}
@@ -72,7 +70,14 @@ def Tmuxsupport(b64):
             if input("Allow script to add 'set -g allow-passthrough on' to your tmux.conf file to allow tmux support? [Y/n]").upper() in Yes_list:
                 with open(tmuxpath, 'a') as file:
                     file.write("\nset -g allow-passthrough on\n")
-                    os.system(f"tmux source-file {tmuxpath} >/dev/null 2>&1") 
+                    try:
+                        subprocess.run("tmux", "source-file", tmuxpath,
+                                  stdout=subprocess.DEVNULL,
+                                  stderr=subprocess.DEVNULL,
+                                   check=True
+                                  )
+                    except subprocess.CalledProcessError as error:
+                        print(f'Error, command failed with an error. Error: {error}')
             else:
                 print("Please add 'set -g allow-passthrough on' to your tmux configuration file to allow tmux support, as without explicitly allowing clipboard passthough on OSC 52 is blocked and copying will fail.")
                 print('Attempting to copy anyways..')
@@ -89,7 +94,6 @@ def Copy(string: str | int) -> None:
         write_code = Tmuxsupport(b64)
         sys.stdout.write(write_code)
         sys.stdout.flush()
-        sleep(Sleeptime)
 
 def main():
     if not sys.stdin.isatty():
@@ -159,11 +163,13 @@ def main():
                     Copy(filecopy.read())
             except PermissionError:
                 print('Error, Unable to open file because of missing permision.')
-            except:
-                print(f'Error, failed to copy file {file}', file=sys.stderr)
+            except Exception as error:
+                print(f'Error, failed to copy file {file}, error: {error}', file=sys.stderr)
         else:
             Copy(' '.join(sys.argv[1:]))
             sys.exit(0)
     else:
         print('Please provide at least 1 argument or run termuxc --help for help.', file=sys.stderr)
         sys.exit(1)
+if __name__ == "__main__":
+    main()

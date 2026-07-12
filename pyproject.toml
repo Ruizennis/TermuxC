@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "TermuxC"
-version = "2.4.5"
+version = "2.5.2"
 description = "A lightweight utility to copy text to the device clipboard using OSC 52."
 authors = [{name = "Ruizennis"}]
 requires-python = ">=3.7"
@@ -21,7 +21,7 @@ classifiers = [
 [project.urls]
 Homepage = "https://github.com/Ruizennis/TermuxC"
 Issues = "https://github.com/Ruizennis/TermuxC/issues"
-Changelog = "https://github.com/Ruizennis/TermuxC/Blob/main/CHANGELOG.MD"
+Changelog = "https://github.com/Ruizennis/TermuxC/blob/main/CHANGELOG.md"
 
 [project.scripts]
 Termuxc = "TermuxC:main"

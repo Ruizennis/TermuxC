@@ -70,14 +70,13 @@ pip uninstall TermuxC
 ## Flags
 |Flag|Function        |
 |----|----------------|
-| -f | Force file read|
-| -t | Force Text copy|
+| -f | Read from file |
+| -i | Interactive mode|
 | -h | Show help menu |
 #### Aditional flag alliases
 - --file
-- --text
+- --interactive
 - --help
-- -help
 
 ## Requirements:
 **Python 3+**
@@ -88,6 +87,9 @@ View Package here! https://pypi.org/project/TermuxC/
 
 Create an issue here!
 https://github.com/Ruizennis/TermuxC/issues
+
+View changelog here!
+https://github.com/Ruizennis/TermuxC/blob/main/CHANGELOG.md
 
 ### Tmux support
 As of version **2.2.0 And above** TermuxC has native tmux support!

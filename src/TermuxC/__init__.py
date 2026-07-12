@@ -16,7 +16,7 @@ help_message = f'''
 Usage:
 
 Copying text with cli
-termuxc Test!
+termuxc <text>
 OR
 echo "<text>" | Termuxc
 
@@ -25,7 +25,6 @@ termuxc <number>
 
 Copying filecontents with cli
 cat <file> | Termuxc
-(replace <file> with desired file path)
 
 Using pip package to copy text
 from TermuxC import Copy
@@ -42,8 +41,8 @@ with open(filename, 'r') as F:
     Copy(C)
     
 Flags
--f • Force File file
--t • Force text copy
+-f • Force File read
+-i • Interactive Mode
 -h • Show help menu
 
 for more help see {Githuburl}
@@ -99,8 +98,8 @@ def main():
   elif helpflags.intersection(sys.argv):
     print(help_message)
     print('Would you like to open the Github Repository in browser? [Y/n]')
-    pick = input()
-    if pick not in ['y', 'Y', 'yes', 'Yes' '', ' ']:
+    pick = input().upper()
+    if pick in ['Y', 'YE', 'YES']:
         try:
             subprocess.run(
     ["am", "start", "-a", "android.intent.action.VIEW", "-d", Githuburl],
@@ -112,12 +111,19 @@ def main():
             print(Githuburl)
     sys.exit(0)
   elif len(sys.argv) > 1:
-      if sys.argv[1] in ['-t', '--text']:
-        text = sys.stdin.read()
-        if text.endswith('\n'):
-            text = text[:-1]
-        Copy(text)
-        sys.exit(0)
+      if sys.argv[1] in ['-i', '--interactive']:      
+        try:
+            print('[Interactive Mode - Enter text and press Ctrl+D to copy]')
+            text = sys.stdin.read()
+            if text.endswith('\n'):
+                text = text[:-1]
+            Copy(text)
+            sys.exit(0)
+        except KeyboardInterrupt:
+            print('Ctrl+C pressed, stopping')
+            sys.exit(0)
+        except:
+            sys.exit(1)
 
       elif sys.argv[1] in ['-f', '--file']:
           if len(sys.argv) == 3:

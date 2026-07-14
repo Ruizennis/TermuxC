@@ -10,6 +10,7 @@ logger = logging.getLogger("TermuxC")
 
 
 def handle_stdin():
+    """Handles piped input."""
     read_stdin = sys.stdin.read().rstrip('\n')
     if not read_stdin:
         logger.warning('Please provide an input')

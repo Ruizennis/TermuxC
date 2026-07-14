@@ -19,6 +19,7 @@ def handle_stdin():
 
 
 def flag_interactive():
+    """handles interactive flag logic"""
     try:
         print('[Interactive Mode - Enter text and press Ctrl+D to copy]')
         text = sys.stdin.read().rstrip('\n')
@@ -32,6 +33,7 @@ def flag_interactive():
 
 
 def flag_file(filepath: str) -> str:
+    """Handles copying text from file"""
     if not os.path.isfile(filepath):
         logger.warning(f'Error, invalid filepath \"{filepath}\"')
         sys.exit(1)

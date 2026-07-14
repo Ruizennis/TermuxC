@@ -98,6 +98,7 @@ This will throw an error!
 ```
 termuxc "("
 ```
+This will copy the text successfully!
 
 ## Requirements:
 **Python 3.10+**

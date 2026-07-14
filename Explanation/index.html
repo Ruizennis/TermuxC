@@ -23,7 +23,7 @@
     
     
       
-        <title>Explanation - TermuxC Wiki</title>
+        <title>Explanation - TermuxC Documentation</title>
       
     
     
@@ -90,7 +90,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="TermuxC Wiki" class="md-header__button md-logo" aria-label="TermuxC Wiki" data-md-component="logo">
+    <a href=".." title="TermuxC Documentation" class="md-header__button md-logo" aria-label="TermuxC Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -104,7 +104,7 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            TermuxC Wiki
+            TermuxC Documentation
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
@@ -304,13 +304,13 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="TermuxC Wiki" class="md-nav__button md-logo" aria-label="TermuxC Wiki" data-md-component="logo">
+    <a href=".." title="TermuxC Documentation" class="md-nav__button md-logo" aria-label="TermuxC Documentation" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    TermuxC Wiki
+    TermuxC Documentation
   </label>
   
     <div class="md-nav__source">
@@ -421,10 +421,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#last-updated-6122026" class="md-nav__link">
+  <a href="#last-updated-6132026" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Last updated 6/12/2026
+        Last updated 6/13/2026
       
     </span>
   </a>
@@ -466,10 +466,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#last-updated-6122026" class="md-nav__link">
+  <a href="#last-updated-6132026" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Last updated 6/12/2026
+        Last updated 6/13/2026
       
     </span>
   </a>
@@ -496,16 +496,16 @@
   
 
 
-<h1 id="advanced-explanation">Advanced Explanation</h1>
-<h3 id="last-updated-6122026"><strong>Last updated 6/12/2026</strong></h3>
+<h1 id="advanced-explanation">Advanced Explanation<a class="headerlink" href="#advanced-explanation" title="Permanent link">&para;</a></h1>
+<h3 id="last-updated-6132026"><strong>Last updated 6/13/2026</strong><a class="headerlink" href="#last-updated-6132026" title="Permanent link">&para;</a></h3>
 <hr />
-<h1 id="security-transparency">Security &amp; Transparency</h1>
-<h2 id="why-is-base64-used">Why is base64 used?</h2>
+<h1 id="security-transparency">Security &amp; Transparency<a class="headerlink" href="#security-transparency" title="Permanent link">&para;</a></h1>
+<h2 id="why-is-base64-used">Why is base64 used?<a class="headerlink" href="#why-is-base64-used" title="Permanent link">&para;</a></h2>
 <p>The OSC 52 protocol requires Base64-encoded input to prevent control characters (such as ";") from interfering with terminal escape sequences. Using base64.b64encode ensures input data is safely serialized, preventing malformed inputs or command injection vectors.  </p>
 <p>Does the code contain obfuscation?<br />
 No. All logic is transparent, and dependencies are limited to the Python Standard Library. 
 The use of base64 is strictly for data transmission (OSC 52 compliance), not for masking malicious behavior.  </p>
-<h2 id="system-security">System Security</h2>
+<h2 id="system-security">System Security<a class="headerlink" href="#system-security" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Command Execution: The tool avoids os.system in favor of the subprocess module, mitigating the risk of shell injection.  </li>
 <li>Input Handling: All user-provided text is sanitized and Base64 encoded before being written to stdout, ensuring data safety. </li>
@@ -513,68 +513,31 @@ The use of base64 is strictly for data transmission (OSC 52 compliance), not for
 <p>Sources
 - <a href="https://dev.to/djmitche/clipboards-terminals-and-linux-3pk5">Clipboards and terminals</a>
 - <a href="https://invisible-island.net/xterm/ctlseqs/ctlseqs.html">xterm codes</a></p>
-<h1 id="all-functions-should-have-proper-error-handling">All functions should have proper error handling</h1>
-<h2 id="one-example-is-the-version-flags">One example is the Version flags</h2>
-<h3 id="version-flag-code">Version Flag code</h3>
-<pre><code class="language-python">    elif Vflags.intersection(sys.argv):
-        try:
-            Version = version('TermuxC')
-            print(Version)
-            sys.exit(0)
-        except PackageNotFoundError:
-                print('Error, pip package not found.')
-                sys.exit(1)
-</code></pre>
-<h2 id="packagenotfounderror-handles-the-exception-if-it-cannot-find-the-package-this-can-happen-if-the-file-isnt-installed-though-pip">PackageNotFoundError handles the exception if it cannot find the package, this can happen if the file isnt installed though pip</h2>
-<h2 id="install-the-package-through-pypi-with-pip-install-termuxc">Install the package through Pypi with pip install TermuxC</h2>
+<h1 id="all-functions-should-have-proper-error-handling">All functions should have proper error handling<a class="headerlink" href="#all-functions-should-have-proper-error-handling" title="Permanent link">&para;</a></h1>
+<h2 id="one-example-is-the-version-flag">One example is the Version flag<a class="headerlink" href="#one-example-is-the-version-flag" title="Permanent link">&para;</a></h2>
+<h3 id="version-flag-code">Version Flag code<a class="headerlink" href="#version-flag-code" title="Permanent link">&para;</a></h3>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span>
+<span class="normal"><a href="#__codelineno-0-7">7</a></span>
+<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">version</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>        <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>            <span class="n">package_version</span> <span class="o">=</span> <span class="n">version</span><span class="p">(</span><span class="s1">&#39;TermuxC&#39;</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">package_version</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="k">except</span> <span class="n">PackageNotFoundError</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error, pip package not found, to resolve this error please install the package from Pypi with pip install TermuxC&#39;</span><span class="p">)</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<h2 id="packagenotfounderror-handles-the-exception-if-it-cannot-find-the-package-this-can-happen-if-the-file-isnt-installed-through-pip">PackageNotFoundError handles the exception if it cannot find the package, this can happen if the file isn't installed through pip.<a class="headerlink" href="#packagenotfounderror-handles-the-exception-if-it-cannot-find-the-package-this-can-happen-if-the-file-isnt-installed-through-pip" title="Permanent link">&para;</a></h2>
+<h2 id="install-the-package-through-pypi-with-pip-install-termuxc">Install the package through Pypi with pip install TermuxC<a class="headerlink" href="#install-the-package-through-pypi-with-pip-install-termuxc" title="Permanent link">&para;</a></h2>
 <hr />
-<h1 id="configuration">Configuration</h1>
-<h2 id="below-is-the-configuration-area-of-my-code-and-also-a-table-of-what-each-configuration-variable-controls">Below is the configuration area of my code and also a table of what each configuration variable controls.</h2>
-<h2 id="when-forking-ensure-the-github-url-points-to-your-repository-if-you-want-to-leave-credit-add-a-this-repository-link-in-the-help_message-however-its-not-mandatory">When forking Ensure the Github url points to <strong>your</strong> repository, if you want to leave credit add a this repository link in the help_message however its not mandatory.</h2>
-<pre><code class="language-python">Githuburl = &quot;https://github.com/Ruizennis/TermuxC&quot;
-helpflags = {'-h', '--help'}
-fileflags = {'-f', '--file'}
-iflags = {'-i', '--interactive'}
-Vflags = {'-V', '--version'}
-help_message = f'''
-Usage:
-
-Copying text with cli
-termuxc &lt;text&gt;
-OR
-echo &quot;&lt;text&gt;&quot; | Termuxc
-
-Copying a number with cli
-termuxc &lt;number&gt;
-
-Copying file contents with cli
-cat &lt;file&gt; | Termuxc
-
-Using pip package to copy text
-from TermuxC import Copy
-Copy('&lt;text&gt;')
-
-Using pip package to copy number
-from TermuxC import Copy
-Copy(&lt;number&gt;)
-
-Using Pip package to copy text from file
-from TermuxC import Copy
-with open(filename, 'r') as F:
-    C = F.read()
-    Copy(C)
-
-Flags
--f • Copy text from file
--i • Interactive Mode
--h • Show help menu
--V • Show version info
-
-# Example:
-# Original Repository: https://github.com/Ruizennis/TermuxC
-for more help see {Githuburl}
-'''
-</code></pre>
+<h2 id="when-forking-this-repository-ensure-the-github-url-points-to-your-repository">When forking this repository ensure the GitHub url points to <strong>your</strong> repository.<a class="headerlink" href="#when-forking-this-repository-ensure-the-github-url-points-to-your-repository" title="Permanent link">&para;</a></h2>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">GITHUB_URL</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/Ruizennis/TermuxC&quot;</span>
+</span></code></pre></div></td></tr></table></div>
 <table>
 <thead>
 <tr>
@@ -584,37 +547,16 @@ for more help see {Githuburl}
 </thead>
 <tbody>
 <tr>
-<td>Githuburl</td>
+<td>GITHUB_URL</td>
 <td>Controls what url is shown in help and what url to open when ActivityManager attempts to open repository url</td>
-</tr>
-<tr>
-<td>helpflags</td>
-<td>help flag aliases</td>
-</tr>
-<tr>
-<td>fileflags</td>
-<td>read from file mode flag aliases</td>
-</tr>
-<tr>
-<td>iflags</td>
-<td>Interactive mode flag aliases</td>
-</tr>
-<tr>
-<td>Vflags</td>
-<td>Version flag aliases</td>
-</tr>
-<tr>
-<td>help_message</td>
-<td>what is printed when a help flag is detected</td>
 </tr>
 </tbody>
 </table>
-<h2 id="note-there-is-not-a-configuration-variable-to-disable-asking-if-you-want-to-open-the-github-url-when-running-a-help-flag-to-keep-the-package-lightweight">Note: There is not a configuration variable to disable asking if you want to open the Github url when running a help flag to keep the package lightweight.</h2>
 <hr />
-<h1 id="general-troubleshooting-guide-and-package-limitations">General Troubleshooting Guide and Package limitations</h1>
-<h2 id="the-sections-below-should-provide-a-quick-way-to-fix-any-problems-you-may-have-most-problems-should-be-solvable-in-a-few-small-steps-because-of-the-nature-of-the-program">The Sections below should provide a quick way to fix any problems you may have, most problems should be solvable in a few small steps because of the nature of the program.</h2>
-<h2 id="however-if-you-are-using-an-old-or-unsupported-multiplexor-or-a-terminal-that-does-not-support-osc-52-then-these-solutions-may-not-work"><strong>However</strong> if you are using an old or unsupported multiplexor or a terminal that does not support osc 52 then these solutions may not work.</h2>
-<h1 id="tmux-specific-fixes">Tmux Specific Fixes</h1>
+<h1 id="general-troubleshooting-guide-and-package-limitations">General Troubleshooting Guide and Package limitations<a class="headerlink" href="#general-troubleshooting-guide-and-package-limitations" title="Permanent link">&para;</a></h1>
+<h2 id="the-sections-below-should-provide-a-quick-way-to-fix-any-problems-you-may-have-most-problems-should-be-solvable-in-a-few-small-steps-because-of-the-nature-of-the-program">The Sections below should provide a quick way to fix any problems you may have, most problems should be solvable in a few small steps because of the nature of the program.<a class="headerlink" href="#the-sections-below-should-provide-a-quick-way-to-fix-any-problems-you-may-have-most-problems-should-be-solvable-in-a-few-small-steps-because-of-the-nature-of-the-program" title="Permanent link">&para;</a></h2>
+<h2 id="however-if-you-are-using-an-old-or-unsupported-multiplexor-or-a-terminal-that-does-not-support-osc-52-then-these-solutions-may-not-work"><strong>However</strong> if you are using an old or unsupported multiplexor or a terminal that does not support osc 52 then these solutions may not work.<a class="headerlink" href="#however-if-you-are-using-an-old-or-unsupported-multiplexor-or-a-terminal-that-does-not-support-osc-52-then-these-solutions-may-not-work" title="Permanent link">&para;</a></h2>
+<h1 id="tmux-specific-fixes">Tmux Specific Fixes<a class="headerlink" href="#tmux-specific-fixes" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
@@ -629,22 +571,7 @@ for more help see {Githuburl}
 </tr>
 </tbody>
 </table>
-<h1 id="general-issues">General Issues</h1>
-<table>
-<thead>
-<tr>
-<th>Issue</th>
-<th>Potential fix</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>After updating my package to the newest version it no longer works properly</td>
-<td>Downgrade to the latest stable patch</td>
-</tr>
-</tbody>
-</table>
-<h1 id="stable-patches">Stable patches</h1>
+<h1 id="stable-patches">Stable patches<a class="headerlink" href="#stable-patches" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
@@ -655,16 +582,16 @@ for more help see {Githuburl}
 </thead>
 <tbody>
 <tr>
-<td><a href="https://pypi.org/project/TermuxC/2.5.6/">TermuxC - 2.5.6</a></td>
-<td>pip install TermuxC==2.5.6</td>
-<td>2.5.6</td>
+<td><a href="https://pypi.org/project/TermuxC/2.5.8/">TermuxC - 2.5.8</a></td>
+<td>pip install TermuxC==2.5.8</td>
+<td>2.5.8</td>
 </tr>
 </tbody>
 </table>
-<h1 id="additional-resources">Additional resources</h1>
+<h1 id="additional-resources">Additional resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h1>
 <p><a href="https://developer.android.com/reference/android/app/ActivityManager">Android Activity Manager API</a><br />
 <a href="https://github.com/Ruizennis/TermuxC/issues">Issues</a></p>
-<h5 id="if-you-have-any-issues-using-the-termuxc-package-or-cli-tool-please-make-an-issue">If you have any issues using the TermuxC package or cli tool please make an issue.</h5>
+<h5 id="if-you-have-any-issues-using-the-termuxc-package-or-cli-tool-please-make-an-issue">If you have any issues using the TermuxC package or cli tool please make an issue.<a class="headerlink" href="#if-you-have-any-issues-using-the-termuxc-package-or-cli-tool-please-make-an-issue" title="Permanent link">&para;</a></h5>
 
 
 
@@ -764,7 +691,7 @@ for more help see {Githuburl}
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.footer", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.sections", "navigation.footer", "navigation.top", "navigation.tracking", "search.suggest", "search.highlight", "search.share", "content.code.copy", "content.code.annotate"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>

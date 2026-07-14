@@ -2,7 +2,7 @@
 ### Termux copy to clipboard made easy.
 ## Also known as TermuxCopy
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Python Version](https://img.shields.io/badge/python-3.6%2B-blue.svg)](https://www.python.org)
+[![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org)
 [![PyPI version](https://img.shields.io/pypi/v/TermuxC.svg?color=blue)](https://pypi.org/project/TermuxC/)
 [![PyPI downloads](https://img.shields.io/pypi/dm/TermuxC.svg)](https://pypi.org/project/TermuxC/)
 
@@ -42,24 +42,24 @@ Also compatible with
 
 ### Copy text
 ```python
-from TermuxC import Copy
-Copy("Str") #works with strings,
-Copy(1) # numbers
-Copy(1.3) # and floats!
+from TermuxC import copy
+copy("Str") #works with strings,
+copy(1) # numbers
+copy(1.3) # and floats!
 ```
 
 ### Copy text from file
 ```python
-from TermuxC import Copy
+from TermuxC import copy
 with open("TermuxC.py", "r") as f:
     content = f.read()
-    Copy(content)
+    copy(content)
 ```
 ### Copy current working directory
 ```python
-from TermuxC import Copy
+from TermuxC import copy
 import os
-Copy(os.getcwd())
+copy(os.getcwd())
 ```
 
 ## Installation 
@@ -80,14 +80,27 @@ pip uninstall TermuxC
 | -i | Interactive mode|
 | -h | Show help menu |
 | -V | Show package version|
-#### Aditional flag aliases
+#### Additional flag aliases
 - --file
 - --interactive
 - --help
 - --version
 
+## Handling special characters
+### Some text may get interpreted incorrectly by the bash (or zsh) interpreter, to fix this issue wrap your text in single or double quotes
+
+### Incorrect:
+```
+termuxc (
+```
+This will throw an error!
+### Correct:
+```
+termuxc "("
+```
+
 ## Requirements:
-**Python 3+**
+**Python 3.10+**
 
 Get Python from here!  
 https://www.python.org
@@ -105,7 +118,7 @@ View the documentation here!
 https://Ruizennis.github.io/TermuxC/
 
 ### Tmux support
-As of version **2.2.0 And above** TermuxC has native tmux support!
+#### To allow TermuxC to work inside of termux add "set -g allow-passthrough on" to your tmux configuration file.
 
 # License
 ## This project is licensed under the MIT license, see [LICENSE](LICENSE)

@@ -1,5 +1,5 @@
 # Advanced Explanation
-### **Last updated 6/12/2026**
+### **Last updated 6/13/2026**
 ---
 
 # Security & Transparency
@@ -18,82 +18,33 @@ Sources
 - [xterm codes](https://invisible-island.net/xterm/ctlseqs/ctlseqs.html)
 
 # All functions should have proper error handling
-## One example is the Version flags
+## One example is the Version flag
 
 ### Version Flag code
 ```python
-    elif Vflags.intersection(sys.argv):
+    elif args.version:
         try:
-            Version = version('TermuxC')
-            print(Version)
+            package_version = version('TermuxC')
+            print(package_version)
             sys.exit(0)
         except PackageNotFoundError:
-                print('Error, pip package not found.')
-                sys.exit(1)
+            print('Error, pip package not found, to resolve this error please install the package from Pypi with pip install TermuxC')
+            sys.exit(1)
 ```
-## PackageNotFoundError handles the exception if it cannot find the package, this can happen if the file isnt installed though pip
+## PackageNotFoundError handles the exception if it cannot find the package, this can happen if the file isn't installed through pip.
 ## Install the package through Pypi with pip install TermuxC
 ---
 
-# Configuration
-## Below is the configuration area of my code and also a table of what each configuration variable controls.
-## When forking Ensure the Github url points to **your** repository, if you want to leave credit add a this repository link in the help_message however its not mandatory.
+## When forking this repository ensure the GitHub url points to **your** repository.
+
 ```python
-Githuburl = "https://github.com/Ruizennis/TermuxC"
-helpflags = {'-h', '--help'}
-fileflags = {'-f', '--file'}
-iflags = {'-i', '--interactive'}
-Vflags = {'-V', '--version'}
-help_message = f'''
-Usage:
+GITHUB_URL = "https://github.com/Ruizennis/TermuxC"
 
-Copying text with cli
-termuxc <text>
-OR
-echo "<text>" | Termuxc
-
-Copying a number with cli
-termuxc <number>
-
-Copying file contents with cli
-cat <file> | Termuxc
-
-Using pip package to copy text
-from TermuxC import Copy
-Copy('<text>')
-
-Using pip package to copy number
-from TermuxC import Copy
-Copy(<number>)
-
-Using Pip package to copy text from file
-from TermuxC import Copy
-with open(filename, 'r') as F:
-    C = F.read()
-    Copy(C)
-    
-Flags
--f • Copy text from file
--i • Interactive Mode
--h • Show help menu
--V • Show version info
-
-# Example:
-# Original Repository: https://github.com/Ruizennis/TermuxC
-for more help see {Githuburl}
-'''
 ```
 
 |Configuration Variable| Controls|
 |---------------------|--------|
-| Githuburl           | Controls what url is shown in help and what url to open when ActivityManager attempts to open repository url|
-| helpflags |  help flag aliases|
-| fileflags |  read from file mode flag aliases|
-| iflags | Interactive mode flag aliases|
-| Vflags |  Version flag aliases|
-| help_message|  what is printed when a help flag is detected|
-
-## Note: There is not a configuration variable to disable asking if you want to open the Github url when running a help flag to keep the package lightweight.
+| GITHUB_URL           | Controls what url is shown in help and what url to open when ActivityManager attempts to open repository url|
 
 ---
 
@@ -107,16 +58,11 @@ for more help see {Githuburl}
 |------|-------------|
 |Copying not working|Ensure your tmux configuration file has "set -g allow-passthrough on"|
 
-# General Issues
-| Issue | Potential fix|
-|-------|--------------|
-| After updating my package to the newest version it no longer works properly | Downgrade to the latest stable patch|
-
 
 # Stable patches
 |Installation Url | Installation Command | Version number |
 |-----------------|----------------------|----------------|
-|[TermuxC - 2.5.6](https://pypi.org/project/TermuxC/2.5.6/)| pip install TermuxC==2.5.6| 2.5.6|
+|[TermuxC - 2.5.8](https://pypi.org/project/TermuxC/2.5.8/)| pip install TermuxC==2.5.8| 2.5.8|
 
 # Additional resources
 [Android Activity Manager API](https://developer.android.com/reference/android/app/ActivityManager)  

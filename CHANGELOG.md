@@ -1,10 +1,22 @@
 # TermuxC Pip Changelog
-## Note, this does not include all commits, only commits with an assosiated pip version increase.
-
+## Note, this does not include all commits, only commits with an associated pip version increase.
+> **Developer Note**: Prior to version 2.5.6, some updates were deployed with unresolved issues. Moving forward, a more rigorous testing process has been introduced for all new releases to improve stability and catch bugs before deployment.
 ---
 
-# 2.5.6:
-## Stable release
+# 2.6.0
+## Stable Release
+- Updated CHANGELOG.md to add developer note.
+- Switched to using argparse for better argument parsing.
+- Added docstrings to all functions.
+- Updated .gitignore to remove redundecy.
+- Updated README.md to reflect new function names.
+- Updated documentation to reflect new code changes.
+- Updated code to follow PEP 8 naming conventions.
+- Removed 2.5.6 from the stable versions list.
+- Divided code into sections for easier reading
+---
+
+# 2.5.6
 - fixed flags system by declaring args = set(sys.argv) on line 99
 - Updated docs with new catpucchin mocha color scheme
 - Removed 2.5.5 from stable releases list in docs.
@@ -24,7 +36,7 @@
 ---
 
 # 2.5.2
-- -f flag reader updated
+- file flag reader updated
 - New Version flag added
 - Better except error handling
 - Made code more readable
@@ -48,19 +60,19 @@
 ---
 
 # 2.4.3
-## Fixed an inverse if statement at line 103
+- Fixed an inverse if statement on line 10
 
 ---
 
 # 2.4.2:
-## Fixed indentation error on line 81
+- Fixed indentation error on line 81
 
 ---
 
 # 2.4.1: 
 - Added user confirmation step before writing to tmux config
 - Removed all dependency on termux-setup-tools by instead using subproccess to activate the android activity manager
-- Imported subproccess
+- Imported subprocess
 - Linked changelog in pyproject.toml
 
 ---
@@ -85,7 +97,7 @@
 
 # 2.2.0:
 - Added native tmux support
-- Removed Screen focused integration instead opting to focus on tmux intergrarion only
+- Removed Screen focused integration instead opting to focus on tmux integration only
 - Updated README.md
 
 ---

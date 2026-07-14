@@ -103,17 +103,14 @@ This will copy the text successfully!
 ## Requirements:
 **Python 3.10+**
 
-Get Python from here!  
-https://www.python.org
-
 View Package here!  
-https://pypi.org/project/TermuxC/
+[Pypi - TermuxC](https://pypi.org/project/TermuxC/)
 
 Create an issue here!  
-https://github.com/Ruizennis/TermuxC/issues
+[Issues](https://github.com/Ruizennis/TermuxC/issues)
 
 View changelog here!  
-https://github.com/Ruizennis/TermuxC/blob/main/CHANGELOG.md
+[Changelog](https://github.com/Ruizennis/TermuxC/blob/main/CHANGELOG.md)
 
 View the documentation here!  
 https://Ruizennis.github.io/TermuxC/

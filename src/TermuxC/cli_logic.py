@@ -7,7 +7,6 @@ from importlib.metadata import version, PackageNotFoundError
 GITHUB_URL = "https://github.com/Ruizennis/TermuxC"
 
 logger = logging.getLogger("TermuxC")
-lock = Lock()
 
 
 def handle_stdin():

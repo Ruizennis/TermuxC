@@ -62,10 +62,7 @@ GITHUB_URL = "https://github.com/Ruizennis/TermuxC"
 # Stable patches
 |Installation Url | Installation Command | Version number |
 |-----------------|----------------------|----------------|
-|[TermuxC - 2.6.1](https://pypi.org/project/TermuxC/2.6.1/)| pip install TermuxC==2.6.1| 2.6.1|
+|[TermuxC - 2.6.2](https://pypi.org/project/TermuxC/2.6.2/)| pip install TermuxC==2.6.2| 2.6.2|
 
-# Additional resources
-[Android Activity Manager API](https://developer.android.com/reference/android/app/ActivityManager)  
-[Issues](https://github.com/Ruizennis/TermuxC/issues)
 
 ##### If you have any issues using the TermuxC package or cli tool please make an issue.

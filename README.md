@@ -43,7 +43,7 @@ Also compatible with
 ### Copy text
 ```python
 from TermuxC import copy
-copy("Str") #works with strings,
+copy("Str") # works with strings,
 copy(1) # numbers
 copy(1.3) # and floats!
 ```
@@ -51,7 +51,7 @@ copy(1.3) # and floats!
 ### Copy text from file
 ```python
 from TermuxC import copy
-with open("TermuxC.py", "r") as f:
+with open("filename", "r") as f:
     content = f.read()
     copy(content)
 ```

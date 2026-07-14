@@ -113,7 +113,7 @@ View changelog here!
 [Changelog](https://github.com/Ruizennis/TermuxC/blob/main/CHANGELOG.md)
 
 View the documentation here!  
-https://Ruizennis.github.io/TermuxC/
+[Documentstion](https://Ruizennis.github.io/TermuxC/)
 
 ### Tmux support
 #### To allow TermuxC to work inside of termux add "set -g allow-passthrough on" to your tmux configuration file.

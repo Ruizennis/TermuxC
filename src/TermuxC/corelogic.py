@@ -5,7 +5,7 @@ import logging
 from threading import Lock
 logger = logging.getLogger("TermuxC")
 
-# tmux support natively
+lock = Lock()
 
 
 def check_for_tmux():

@@ -1,5 +1,5 @@
 # Advanced Explanation
-### **Last updated 6/13/2026**
+### **Last updated 6/14/2026**
 ---
 
 # Security & Transparency
@@ -44,9 +44,10 @@ GITHUB_URL = "https://github.com/Ruizennis/TermuxC"
 
 |Configuration Variable| Controls|
 |---------------------|--------|
-| GITHUB_URL           | Controls what url is shown in help and what url to open when ActivityManager attempts to open repository url|
+| GITHUB_URL          | Controls what url is shown in help and what url to open when ActivityManager attempts to open repository url|
 
 ---
+
 
 # General Troubleshooting Guide and Package limitations
 ## The Sections below should provide a quick way to fix any problems you may have, most problems should be solvable in a few small steps because of the nature of the program.
@@ -54,7 +55,6 @@ GITHUB_URL = "https://github.com/Ruizennis/TermuxC"
 ## **However** if you are using an old or unsupported multiplexor or a terminal that does not support osc 52 then these solutions may not work.
 
 # Tmux Specific Fixes
-|Issue |Potential fix|
 |------|-------------|
 |Copying not working|Ensure your tmux configuration file has "set -g allow-passthrough on"|
 
@@ -62,7 +62,7 @@ GITHUB_URL = "https://github.com/Ruizennis/TermuxC"
 # Stable patches
 |Installation Url | Installation Command | Version number |
 |-----------------|----------------------|----------------|
-|[TermuxC - 2.5.8](https://pypi.org/project/TermuxC/2.5.8/)| pip install TermuxC==2.5.8| 2.5.8|
+|[TermuxC - 2.6.1](https://pypi.org/project/TermuxC/2.6.1/)| pip install TermuxC==2.6.1| 2.6.1|
 
 # Additional resources
 [Android Activity Manager API](https://developer.android.com/reference/android/app/ActivityManager)  

@@ -2,7 +2,7 @@ import os
 import sys
 import base64
 import logging
-
+from threading import Lock
 logger = logging.getLogger("TermuxC")
 
 # tmux support natively
@@ -50,8 +50,9 @@ def copy(string: str | int | float) -> None:
     and writes it to stdout
     then flushes the stdout to ready the stdout for more copy() calls.
     """
-    content = str(string)
-    b64 = base64.b64encode(content.encode('utf-8')).decode('ascii')
-    write_code = tmux_support(b64)
-    sys.stdout.write(write_code)
-    sys.stdout.flush()
+    with lock:
+        content = str(string)
+        b64 = base64.b64encode(content.encode('utf-8')).decode('ascii')
+        write_code = tmux_support(b64)
+        sys.stdout.write(write_code)
+        sys.stdout.flush()

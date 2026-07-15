@@ -9,6 +9,13 @@
 
 This dual function pip package & cli tool was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app; This package solves that.
 
+
+## Installation 
+Install pip package
+```bash
+pip install TermuxC
+```
+
 ## Cli Tool Usage:
 
 ### Copy text
@@ -62,17 +69,6 @@ import os
 copy(os.getcwd())
 ```
 
-## Installation 
-Install pip package
-```bash
-pip install TermuxC
-```
-
-## Uninstallation
-Uninstall pip package
-```bash
-pip uninstall TermuxC
-```
 ## Flags
 |Flag|Function        |
 |----|----------------|

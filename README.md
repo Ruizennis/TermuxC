@@ -9,11 +9,22 @@
 
 This dual function pip package & cli tool was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app; This package solves that.
 
+## Why use TermuxC?
+- Allows coping from files or text
+- Allows piping data
+- Requires **Zero** dependencies
+- Designed specifically to work on Termux
+
 
 ## Installation 
-Install pip package
+Install as pip package
 ```bash
 pip install TermuxC
+```
+Install using git
+```bash
+git clone https://github.com/Ruizennis/TermuxC
+cd TermuxC
 ```
 
 ## Cli Tool Usage:
@@ -109,7 +120,7 @@ View changelog here!
 [Changelog](https://github.com/Ruizennis/TermuxC/blob/main/CHANGELOG.md)
 
 View the documentation here!  
-[Documentstion](https://Ruizennis.github.io/TermuxC/)
+[Documentation](https://Ruizennis.github.io/TermuxC/)
 
 ### Tmux support
 #### To allow TermuxC to work inside of termux add "set -g allow-passthrough on" to your tmux configuration file.

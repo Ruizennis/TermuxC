@@ -1,5 +1,5 @@
 # TermuxC 
-### Termux copy to clipboard made easy.
+### Termux Copy To Clipboard Made simple.
 ## Also known as TermuxCopy
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python Version](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org)
@@ -9,23 +9,43 @@
 
 This dual function pip package & cli tool was made to solve an issue with Termux, not allowing copying to device clipboard easily without their companion app; This package solves that.
 
+## Table of Contents
+- [Why use TermuxC?](#why-use-termuxc)
+- [Installation](#installation)
+- [Quick Start](#quick-start)
+- [CLI Tool Usage](#cli-tool-usage)
+- [Pip Package Usage](#pip-package-usage)
+- [Flags](#flags)
+- [Handling Special Characters](#handling-special-characters)
+- [Requirements](#requirements)
+- [Troubleshooting](#troubleshooting)
+
+
 ## Why use TermuxC?
-- Allows coping from files or text
+- Allows coping from files or text using OSC52
 - Allows piping data
-- Requires **Zero** dependencies
+- Requires **Zero** external dependencies; no extra pip packages required
 - Designed specifically to work on Termux
+- Termux API app is not required
 
 
 ## Installation 
-Install as pip package
+### Install using pip
 ```bash
 pip install TermuxC
 ```
-Install using git
+### Install using git
 ```bash
 git clone https://github.com/Ruizennis/TermuxC
 cd TermuxC
 ```
+## Quick Start
+### Once you install TermuxC you can start easily copying text using the termuxc command.
+```bash
+termuxc hi!
+```
+### This will copy "hi!" to your device clipboard.
+
 
 ## Cli Tool Usage:
 
@@ -50,19 +70,23 @@ termuxc -f filename
 ```bash
 pwd | termuxc
 ```
-Also compatible with
+## Also compatible with
 - bat
 - grep
 - curl
 - head
 - tail
+- ls
+
+### And other stdin based cli tools!
+
 ## Pip package Usage:
 
 ### Copy text
 ```python
 from TermuxC import copy
 copy("Str") # works with strings,
-copy(1) # numbers
+copy(1) # numbers,
 copy(1.3) # and floats!
 ```
 
@@ -85,11 +109,13 @@ copy(os.getcwd())
 |----|----------------|
 | -f | Read from file |
 | -i | Interactive mode|
+| -v | Enable verbose output|
 | -h | Show help menu |
 | -V | Show package version|
-#### Additional flag aliases
+### Additional flag aliases
 - --file
 - --interactive
+- --verbose
 - --help
 - --version
 
@@ -100,30 +126,32 @@ copy(os.getcwd())
 ```
 termuxc (
 ```
-This will throw an error!
+#### This will throw an error!
 ### Correct:
 ```
 termuxc "("
 ```
-This will copy the text successfully!
+#### This will copy the text successfully!
 
 ## Requirements:
 **Python 3.10+**
 
-View Package here!  
-[Pypi - TermuxC](https://pypi.org/project/TermuxC/)
+## Links  
+- [Pypi - TermuxC](https://pypi.org/project/TermuxC/)
+- [Issues](https://github.com/Ruizennis/TermuxC/issues)
+- [Changelog](https://github.com/Ruizennis/TermuxC/blob/main/CHANGELOG.md)  
+- [Documentation](https://Ruizennis.github.io/TermuxC/)
 
-Create an issue here!  
-[Issues](https://github.com/Ruizennis/TermuxC/issues)
+## Troubleshooting
+### Python Runtime Issues
+#### Ensure your Python version is above 3.10.
 
-View changelog here!  
-[Changelog](https://github.com/Ruizennis/TermuxC/blob/main/CHANGELOG.md)
-
-View the documentation here!  
-[Documentation](https://Ruizennis.github.io/TermuxC/)
-
+### Version flag issues
+#### Ensure you've downloaded the package directly from PyPi.
 ### Tmux support
 #### To allow TermuxC to work inside of termux add "set -g allow-passthrough on" to your tmux configuration file.
+
+___
 
 # License
 ## This project is licensed under the MIT license, see [LICENSE](LICENSE)

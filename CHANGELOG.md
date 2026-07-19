@@ -3,8 +3,16 @@
 > **Developer Note**: Prior to version 2.5.6, some updates were deployed with unresolved issues. Moving forward, a more rigorous testing process has been introduced for all new releases to improve stability and catch bugs before deployment.
 ---
 
+# 3.1.0
+## Official Release
+- Added verbose flag
+- Fixed logging warnings that should instead be errors
+- Updated more code to follow PEP8 regulations
+- Removed useless code
+
+---
+
 # 2.6.3
-## Stable Release 1
 - Removed 2.6.0 from stable releases list after bug was discovered with calling multiple copy calls subseqencialy lagging the terminal.
 - Added threading lock to prevent lag from multiple fast copy() function calls.
 - Updated docs to remove activity manager documenation link

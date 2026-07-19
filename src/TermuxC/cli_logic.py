@@ -126,11 +126,5 @@ def main():
             "termuxc --help for help."
         )
         sys.exit(1)
-    try:
-        copy(content)
-    except Exception as e:
-        logger.error(
-            "Ensure corelogic.py is in the same folder as "
-            "cli_logic.py and __init__.py. "
-            f"Details: {e}"
-        )
+
+    copy(content)

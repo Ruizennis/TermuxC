@@ -56,7 +56,6 @@ GITHUB_URL = "https://github.com/Ruizennis/TermuxC"
 # Stable patches
 |Version & Url | Installation Command | 
 |-----------------|----------------------|
-|[3.1.0](https://pypi.org/project/TermuxC/3.1.0/)| pip install termuxc==3.1.0|
 |[3.0.0](https://pypi.org/project/TermuxC/3.0.0/)| pip install TermuxC==3.0.0|
 
 ### Click a version number navigate to that versions PyPi release.

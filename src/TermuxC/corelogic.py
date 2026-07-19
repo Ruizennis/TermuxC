@@ -1,9 +1,11 @@
 import os
 import sys
 import base64
+from time import sleep
 import logging
 from threading import Lock
-logger = logging.getLogger("TermuxC")
+
+logger = logging.getLogger(__name__)
 
 lock = Lock()
 
@@ -23,20 +25,22 @@ def tmux_support(b64):
     """
     multiplexor = check_for_tmux()
     if multiplexor:
-        tmux_path = os.path.expanduser('~/.tmux.conf')
-        file_content = ''
+        logger.info("Tmux environment detected.")
+        tmux_path = os.path.expanduser("~/.tmux.conf")
+        file_content = ""
         if os.path.exists(tmux_path):
-            with open(tmux_path, 'r', encoding='utf-8') as file_read:
+            with open(tmux_path, "r", encoding="utf-8") as file_read:
                 file_content = file_read.read()
         if "allow-passthrough" not in file_content:
-            logger.warning(
+            logger.error(
                 "Please add 'set -g allow-passthrough on' to your tmux "
                 "configuration file to allow tmux support, as without "
                 "explicitly allowing clipboard passthrough on OSC 52 "
                 "is blocked and copying will fail."
             )
+            logger.info("Exiting..")
+            sys.exit(1)
 
-            logger.warning('Attempting to copy anyway..')
         # special tmux osc command
         return f"\033Ptmux;\033\033]52;c;{b64}\a\033\\"
     else:
@@ -52,7 +56,15 @@ def copy(string: str | int | float) -> None:
     """
     with lock:
         content = str(string)
-        b64 = base64.b64encode(content.encode('utf-8')).decode('ascii')
+        if len(content) <= 100:
+            logger.info(f'Copied \"{content}\"')
+        else:
+            logger.info(
+                f"Copied {len(content)} characters. "
+                "(Text too long to display)"
+            )
+        b64 = base64.b64encode(content.encode("utf-8")).decode("ascii")
         write_code = tmux_support(b64)
         sys.stdout.write(write_code)
         sys.stdout.flush()
+        sleep(0.5)

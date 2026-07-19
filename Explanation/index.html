@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#advanced-explanation" class="md-skip">
+        <a href="#termuxc-docs" class="md-skip">
           Skip to content
         </a>
       
@@ -421,10 +421,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#last-updated-6142026" class="md-nav__link">
+  <a href="#last-updated-6182026" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Last updated 6/14/2026
+        Last updated 6/18/2026
       
     </span>
   </a>
@@ -466,10 +466,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#last-updated-6142026" class="md-nav__link">
+  <a href="#last-updated-6182026" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Last updated 6/14/2026
+        Last updated 6/18/2026
       
     </span>
   </a>
@@ -496,8 +496,8 @@
   
 
 
-<h1 id="advanced-explanation">Advanced Explanation<a class="headerlink" href="#advanced-explanation" title="Permanent link">&para;</a></h1>
-<h3 id="last-updated-6142026"><strong>Last updated 6/14/2026</strong><a class="headerlink" href="#last-updated-6142026" title="Permanent link">&para;</a></h3>
+<h1 id="termuxc-docs">TermuxC Docs<a class="headerlink" href="#termuxc-docs" title="Permanent link">&para;</a></h1>
+<h3 id="last-updated-6182026"><strong>Last updated 6/18/2026</strong><a class="headerlink" href="#last-updated-6182026" title="Permanent link">&para;</a></h3>
 <hr />
 <h1 id="security-transparency">Security &amp; Transparency<a class="headerlink" href="#security-transparency" title="Permanent link">&para;</a></h1>
 <h2 id="why-is-base64-used">Why is base64 used?<a class="headerlink" href="#why-is-base64-used" title="Permanent link">&para;</a></h2>
@@ -507,33 +507,40 @@ No. All logic is transparent, and dependencies are limited to the Python Standar
 The use of base64 is strictly for data transmission (OSC 52 compliance), not for masking malicious behavior.  </p>
 <h2 id="system-security">System Security<a class="headerlink" href="#system-security" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Command Execution: The tool avoids os.system in favor of the subprocess module, mitigating the risk of shell injection.  </li>
 <li>Input Handling: All user-provided text is sanitized and Base64 encoded before being written to stdout, ensuring data safety. </li>
 </ul>
 <p>Sources
 - <a href="https://dev.to/djmitche/clipboards-terminals-and-linux-3pk5">Clipboards and terminals</a>
 - <a href="https://invisible-island.net/xterm/ctlseqs/ctlseqs.html">xterm codes</a></p>
+<hr />
 <h1 id="all-functions-should-have-proper-error-handling">All functions should have proper error handling<a class="headerlink" href="#all-functions-should-have-proper-error-handling" title="Permanent link">&para;</a></h1>
 <h2 id="one-example-is-the-version-flag">One example is the Version flag<a class="headerlink" href="#one-example-is-the-version-flag" title="Permanent link">&para;</a></h2>
 <h3 id="version-flag-code">Version Flag code<a class="headerlink" href="#version-flag-code" title="Permanent link">&para;</a></h3>
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">version</span><span class="p">:</span>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a>    <span class="k">elif</span> <span class="n">args</span><span class="o">.</span><span class="n">version</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a>        <span class="k">try</span><span class="p">:</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>            <span class="n">package_version</span> <span class="o">=</span> <span class="n">version</span><span class="p">(</span><span class="s1">&#39;TermuxC&#39;</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a>            <span class="n">package_version</span> <span class="o">=</span> <span class="n">version</span><span class="p">(</span><span class="s2">&quot;TermuxC&quot;</span><span class="p">)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">package_version</span><span class="p">)</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="k">except</span> <span class="n">PackageNotFoundError</span><span class="p">:</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Error, pip package not found, to resolve this error please install the package from Pypi with pip install TermuxC&#39;</span><span class="p">)</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>                <span class="s2">&quot;Pip package not found. To resolve this error, &quot;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>                <span class="s2">&quot;please install the package from PyPI with: &quot;</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a>                <span class="s2">&quot;pip install TermuxC&quot;</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>            <span class="p">)</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>            <span class="n">sys</span><span class="o">.</span><span class="n">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </span></code></pre></div></td></tr></table></div>
 <h2 id="packagenotfounderror-handles-the-exception-if-it-cannot-find-the-package-this-can-happen-if-the-file-isnt-installed-through-pip">PackageNotFoundError handles the exception if it cannot find the package, this can happen if the file isn't installed through pip.<a class="headerlink" href="#packagenotfounderror-handles-the-exception-if-it-cannot-find-the-package-this-can-happen-if-the-file-isnt-installed-through-pip" title="Permanent link">&para;</a></h2>
-<h2 id="install-the-package-through-pypi-with-pip-install-termuxc">Install the package through Pypi with pip install TermuxC<a class="headerlink" href="#install-the-package-through-pypi-with-pip-install-termuxc" title="Permanent link">&para;</a></h2>
 <hr />
 <h2 id="when-forking-this-repository-ensure-the-github-url-points-to-your-repository">When forking this repository ensure the GitHub url points to <strong>your</strong> repository.<a class="headerlink" href="#when-forking-this-repository-ensure-the-github-url-points-to-your-repository" title="Permanent link">&para;</a></h2>
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="n">GITHUB_URL</span> <span class="o">=</span> <span class="s2">&quot;https://github.com/Ruizennis/TermuxC&quot;</span>
@@ -548,35 +555,32 @@ The use of base64 is strictly for data transmission (OSC 52 compliance), not for
 <tbody>
 <tr>
 <td>GITHUB_URL</td>
-<td>Controls what url is shown in help and what url to open when ActivityManager attempts to open repository url</td>
+<td>Controls what url is shown when using repository flag</td>
 </tr>
 </tbody>
 </table>
 <hr />
-<h1 id="general-troubleshooting-guide-and-package-limitations">General Troubleshooting Guide and Package limitations<a class="headerlink" href="#general-troubleshooting-guide-and-package-limitations" title="Permanent link">&para;</a></h1>
-<h2 id="the-sections-below-should-provide-a-quick-way-to-fix-any-problems-you-may-have-most-problems-should-be-solvable-in-a-few-small-steps-because-of-the-nature-of-the-program">The Sections below should provide a quick way to fix any problems you may have, most problems should be solvable in a few small steps because of the nature of the program.<a class="headerlink" href="#the-sections-below-should-provide-a-quick-way-to-fix-any-problems-you-may-have-most-problems-should-be-solvable-in-a-few-small-steps-because-of-the-nature-of-the-program" title="Permanent link">&para;</a></h2>
-<h2 id="however-if-you-are-using-an-old-or-unsupported-multiplexor-or-a-terminal-that-does-not-support-osc-52-then-these-solutions-may-not-work"><strong>However</strong> if you are using an old or unsupported multiplexor or a terminal that does not support osc 52 then these solutions may not work.<a class="headerlink" href="#however-if-you-are-using-an-old-or-unsupported-multiplexor-or-a-terminal-that-does-not-support-osc-52-then-these-solutions-may-not-work" title="Permanent link">&para;</a></h2>
-<h1 id="tmux-specific-fixes">Tmux Specific Fixes<a class="headerlink" href="#tmux-specific-fixes" title="Permanent link">&para;</a></h1>
-<p>|------|-------------|
-|Copying not working|Ensure your tmux configuration file has "set -g allow-passthrough on"|</p>
 <h1 id="stable-patches">Stable patches<a class="headerlink" href="#stable-patches" title="Permanent link">&para;</a></h1>
 <table>
 <thead>
 <tr>
-<th>Installation Url</th>
+<th>Version &amp; Url</th>
 <th>Installation Command</th>
-<th>Version number</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://pypi.org/project/TermuxC/2.6.3/">TermuxC - 2.6.3</a></td>
-<td>pip install TermuxC==2.6.3</td>
-<td>2.6.3</td>
+<td><a href="https://pypi.org/project/TermuxC/3.1.0/">3.1.0</a></td>
+<td>pip install termuxc==3.1.0</td>
+</tr>
+<tr>
+<td><a href="https://pypi.org/project/TermuxC/3.0.0/">3.0.0</a></td>
+<td>pip install TermuxC==3.0.0</td>
 </tr>
 </tbody>
 </table>
-<h5 id="if-you-have-any-issues-using-the-termuxc-package-or-cli-tool-please-make-an-issue">If you have any issues using the TermuxC package or cli tool please make an issue.<a class="headerlink" href="#if-you-have-any-issues-using-the-termuxc-package-or-cli-tool-please-make-an-issue" title="Permanent link">&para;</a></h5>
+<h3 id="click-a-version-number-navigate-to-that-versions-pypi-release">Click a version number navigate to that versions PyPi release.<a class="headerlink" href="#click-a-version-number-navigate-to-that-versions-pypi-release" title="Permanent link">&para;</a></h3>
+<h3 id="if-you-have-any-issues-using-the-termuxc-package-or-cli-tool-please-make-an-issue">If you have any issues using the TermuxC package or cli tool please make an issue.<a class="headerlink" href="#if-you-have-any-issues-using-the-termuxc-package-or-cli-tool-please-make-an-issue" title="Permanent link">&para;</a></h3>
 
 
 

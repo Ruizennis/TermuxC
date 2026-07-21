@@ -40,7 +40,7 @@ git clone https://github.com/Ruizennis/TermuxC
 cd TermuxC
 ```
 ## Quick Start
-### Once you install TermuxC you can start easily copying text using the termuxc command.
+### Once you install TermuxC you can start easily copying text using the termuxc cli.
 ```bash
 termuxc hi!
 ```
